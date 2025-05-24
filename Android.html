@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Android</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #000000; /* Deep black background */
+    color: #f0f0f0; /* Light grey text */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Top Bar (Header) */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #000000;
+    color: #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-bar .left-icons .material-symbols-outlined {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.top-bar .center-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.top-bar .right-icons {
+    display: flex;
+    align-items: center;
+    background-color: #333333; /* Dark grey background for support button */
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.top-bar .right-icons .material-symbols-outlined {
+    font-size: 18px; /* Smaller icon for support */
+}
+
+/* Main Profile Container */
+.profile-container {
+    padding: 15px 20px;
+}
+
+/* Profile Header Section */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile-header .profile-pic-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #555555; /* Slight border */
+}
+
+.profile-info h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.profile-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #aaaaaa; /* Lighter grey for member since text */
+}
+
+.edit-icon {
+    font-size: 24px;
+    color: #aaaaaa;
+    cursor: pointer;
+}
+
+/* CRED Garage Card */
+.cred-garage-card {
+    background-color: #1a1a1a; /* Slightly lighter black than background */
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.car-icon {
+    font-size: 30px;
+    color: #f0f0f0;
+}
+
+.card-text p {
+    margin: 0;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.card-text .bold-text {
+    font-weight: 600;
+    color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card-text .arrow-icon {
+    font-size: 18px;
+}
+
+/* Account Details & Rewards/Benefits (reusable styling) */
+.account-details,
+.rewards-benefits,
+.transactions-support {
+    margin-bottom: 30px;
+}
+
+.account-details h3,
+.rewards-benefits h3,
+.transactions-support h3 {
+    font-size: 13px;
+    color: #aaaaaa;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #222222; /* Subtle separator line */
+}
+
+.detail-item:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+.detail-item .icon {
+    font-size: 20px;
+    margin-right: 15px;
+    color: #f0f0f0;
+}
+
+.detail-item p {
+    flex-grow: 1; /* Allows text to take up available space */
+    margin: 0;
+    font-size: 16px;
+    color: #f0f0f0;
+}
+
+.detail-item .refresh-text {
+    color: #4CAF50; /* Green for "REFRESH AVAILABLE" */
+    font-weight: 500;
+}
+
+.detail-item .detail-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.detail-item .check-link {
+    color: #f0f0f0; /* Default color for "check" */
+    cursor: pointer;
+}
+
+.detail-item .arrow-icon {
+    font-size: 18px;
+    color: #aaaaaa;
+}
+
+/* Adjustments for Transactions & Support to make arrow stand alone */
+.transactions-support .detail-item .arrow-icon {
+    margin-left: auto; /* Push arrow to the right */
+    color: #f0f0f0; /* Make arrow prominent */
+}
+
+.transactions-support .detail-item .icon {
+    margin-right: 10px; /* Adjust spacing */
+}
+
+    </style>
+</head>
+
+<body>
+    <header class="top-bar">
+        <div class="left-icons">
+            <span class="material-symbols-outlined">arrow_back</span>
+        </div>
+        <div class="center-title">
+            Profile
+        </div>
+        <div class="right-icons">
+            <span class="material-symbols-outlined">chat</span>
+            <span>support</span>
+        </div>
+    </header>
+
+    <main class="profile-container">
+        <section class="profile-header">
+            <div class="profile-pic-section">
+                <img src="C:\Users\HP\Downloads\profile1.jpg"alt="Profile Picture" class="profile-pic">
+                <div class="profile-info">
+                    <h2>andaz Kumar</h2>
+                    <p>member since Dec, 2020</p>
+                </div>
+            </div>
+            <span class="material-symbols-outlined edit-icon">edit</span>
+        </section>
+
+        <section class="cred-garage-card">
+            <span class="material-symbols-outlined car-icon">drive_eta</span>
+            
+            <div class="card-text">
+                <p>get to know your vehicles, inside out</p>
+                <p class="bold-text">CRED garage <span class="material-symbols-outlined arrow-icon">arrow_forward</span></span>
+            </div>
+        </section>
+
+        <section class="account-details">
+            <div class="detail-item">
+                <span class="material-symbols-outlined icon">credit_score</span>
+                <p>credit score • <span class="refresh-text">REFRESH AVAILABLE</span></p>
+                <span class="detail-value">757 <span class="material-symbols-outlined arrow-icon">arrow_forward</span></span>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+            </div>
+            <div class="detail-item">
+                <span class="material-symbols-outlined icon">payments</span>
+                <p>lifetime cashback</p>
+                
+                <span class="detail-value">₹3 <span class="material-symbols-outlined arrow-icon">arrow_forward</span></span>
+
+            </div>
+            <div class="detail-item">
+                <span class="material-symbols-outlined icon">account_balance</span>
+                <p>bank balance</p>
+                <span class="detail-value check-link">check <span class="material-symbols-outlined arrow-icon">arrow_forward</span></span>
+            </div>
+        </section>
+
+        <section class="rewards-benefits">
+            <h3>YOUR REWARDS & BENEFITS</h3>
+            <div class="detail-item">
+                <span class="material-symbols-outlined icon">currency_rupee</span>
+                <p>cashback balance</p>
+                <span class="detail-value">₹0 <span class="material-symbols-outlined arrow-icon">></span></span>
+            </div>
+            <div class="detail-item">
+                <span class="material-symbols-outlined icon">paid</span>
+                <p>coins</p>
+                <span class="detail-value">26,46,583 <span class="material-symbols-outlined arrow-icon">></span></span>
+            </div>
+            <div class="detail-item">
+                <span class="material-symbols-outlined icon">emoji_events</span>
+                <p>win upto Rs 1000</p>
+                <span class="detail-value">refer and earn <span class="material-symbols-outlined arrow-icon">></span></span>
+            </div>
+        </section>
+
+        <section class="transactions-support">
+            <h3>TRANSACTIONS & SUPPORT</h3>
+            <div class="detail-item">
+                <span class="material-symbols-outlined icon">history</span>
+                <p>all transactions</p>
+                <span class="material-symbols-outlined arrow-icon">arrow_forward</span>
+            </div>
+            </section>
+
+    </main>
+</body>
+</html>
